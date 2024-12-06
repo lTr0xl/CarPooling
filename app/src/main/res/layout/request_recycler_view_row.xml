@@ -1,0 +1,165 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/rounded_background"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/requestId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        />
+    <!-- Status Tag (Positioned at top-right corner) -->
+    <TextView
+        android:id="@+id/requestStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available"
+        android:textColor="@color/white"
+        android:background="@drawable/status_tag_background"
+        android:textSize="14sp"
+        android:padding="6dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="250dp"
+        />
+
+    <!-- Request Header (Driver) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:layout_marginTop="-27dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/requestDriverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Doe"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/requestDriverRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.8 ★"
+            android:textColor="@color/gold"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!-- Driver's ride info (from, to, time) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/requestDriverFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="From: Main St."
+            android:textColor="@color/gray"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/requestDriverTo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="To: Central Park"
+            android:textColor="@color/gray"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/requestTimeAndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:00 AM"
+        android:textColor="@color/gray"
+        android:textSize="14sp"/>
+
+    <!-- Price -->
+    <TextView
+        android:id="@+id/requestPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$15.00"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Passenger's Request Info (Name, Start, Destination) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/requestPassengerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passenger: Alice"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/requestPassengerRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5 ★"
+            android:textColor="@color/gold"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!-- Passenger's Ride info (start, destination) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start">
+
+        <TextView
+            android:id="@+id/requestPassengerStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start: 5th Ave."
+            android:textColor="@color/gray"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/requestPassengerDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Destination: Times Square"
+            android:textColor="@color/gray"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>

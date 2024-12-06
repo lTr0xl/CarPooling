@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CarPooling</string>
+    <string name="signup_text"><u>Don\'t have an account?</u></string>
+    <string name="signin_text"><u>Already registered?</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_map_apiKey">AIzaSyCBtdbD4A1PKlTC6gllBw6STTZpdxVmQdA</string>
+
+</resources>

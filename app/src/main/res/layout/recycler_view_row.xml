@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Light"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="20dp"
+    >
+
+    <TextView
+        android:id="@+id/rideIdTextRow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/card_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Driver:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/driverNameRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Passenger:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/passengerNameRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jane Smith"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Car Model:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/carModelRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tesla Model S"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Car Plate:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/carPlateRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABC1234"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Price:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/priceRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$20"
+                android:textSize="16sp"
+                android:textColor="@color/green"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="From:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/fromRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location A"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="To:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/toRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location B"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Rating from Passenger:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/passengerRatingRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Rating from Driver:"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:fontFamily="sans-serif-medium"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/driverRatingRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

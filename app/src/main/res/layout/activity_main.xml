@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/primaryBackground"
+    tools:context=".MainActivity"
+    >
+    <LinearLayout
+        android:id="@+id/loginContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/rounded_box"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Login"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email address"
+            android:inputType="textEmailAddress"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            />
+
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/white"
+            android:paddingVertical="12dp" />
+
+        <TextView
+            android:id="@+id/textSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Don't have an account? Sign Up"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+</RelativeLayout>

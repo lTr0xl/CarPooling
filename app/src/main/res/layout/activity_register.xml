@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/primaryBackground"
+    tools:context=".RegisterActivity">
+
+    <!-- Registration Container -->
+    <LinearLayout
+        android:id="@+id/registerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/rounded_box"
+        android:elevation="8dp">
+
+        <!-- Registration Title -->
+        <TextView
+            android:id="@+id/testRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Register"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+
+        <!-- Full Name Field -->
+        <EditText
+            android:id="@+id/fullNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            />
+
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            />
+
+        <!-- Role Switch -->
+        <LinearLayout
+            android:id="@+id/switchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/passengerLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Passenger"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginEnd="8dp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/roleSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/driverLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Vehicle Type Field -->
+        <EditText
+            android:id="@+id/vehicleTypeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vehicle Type"
+            android:textSize="18sp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            />
+
+        <!-- License Plate Field -->
+        <EditText
+            android:id="@+id/licensePlateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="License Plate"
+            android:textSize="18sp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            />
+
+        <!-- Signup Button -->
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/white"
+            android:paddingVertical="12dp" />
+
+        <!-- Login Text -->
+        <TextView
+            android:id="@+id/textLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Already have an account? Sign In"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+</RelativeLayout>

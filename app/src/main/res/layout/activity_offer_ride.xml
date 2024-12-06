@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OfferRideActivity">
+
+
+    <TextView
+        android:id="@+id/offerRideLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Offer a Ride"
+        android:textStyle="bold"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:id="@+id/driverLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Driver: "
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/offerRideLabel"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/driverNameOfferText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jerry Milanovic"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/driverLabel"
+        app:layout_constraintTop_toTopOf="@id/offerRideLabel"
+        android:layout_marginTop="70dp"
+        />
+
+    <TextView
+        android:id="@+id/carModelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car: "
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/driverLabel"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/carModelOfferText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alfa Romeo Giulia"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/carModelLabel"
+        app:layout_constraintTop_toTopOf="@id/driverLabel"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:id="@+id/carPlateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="License Plate: "
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/carModelLabel"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/carPlateOfferText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AA213DS"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/carPlateLabel"
+        app:layout_constraintTop_toTopOf="@id/carModelLabel"
+        android:layout_marginTop="30dp"
+        />
+
+
+    <TextView
+        android:id="@+id/priceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: $"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/carPlateLabel"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        />
+    <EditText
+        android:id="@+id/priceOffer"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:textSize="20sp"
+        android:layout_marginTop="-8dp"
+        app:layout_constraintStart_toEndOf="@id/priceLabel"
+        app:layout_constraintTop_toBottomOf="@id/carPlateLabel"
+        />
+
+    <TextView
+        android:id="@+id/selectDateAndTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Tap to pick date and time"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/priceLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        />
+
+    <EditText
+        android:id="@+id/searchStartLoc"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/search_view_background"
+        android:hint="Search start location"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectDateAndTime"
+        app:layout_constraintEnd_toStartOf="@id/currentLocationButton"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:imeOptions="actionDone"
+        />
+    <EditText
+        android:id="@+id/searchDestinationLoc"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/search_view_background"
+        android:hint="Search destination location"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchStartLoc"
+        app:layout_constraintEnd_toStartOf="@id/currentLocationButton"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:imeOptions="actionDone"
+        />
+
+
+    <Button
+        android:id="@+id/currentLocationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectDateAndTime"
+        android:text="Current\nlocation"
+        android:textSize="10sp"
+        android:background="@drawable/no_radius_button"
+        />
+
+    <FrameLayout
+        android:id="@+id/mapFragmentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/searchDestinationLoc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:id="@+id/sendOffer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:textSize="26sp"
+        android:text="Send Offer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/blueBlack"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

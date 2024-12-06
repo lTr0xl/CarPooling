@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    tools:context=".ActiveRideActivity"
+    >
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/detailsFragment"
+        android:layout_width="0dp"
+        android:name="com.example.carpooling.RideDetailsFragment"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_ride_details"
+        />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/liveMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:name="com.example.carpooling.MapsFragment"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_maps"
+        />
+
+
+</LinearLayout>

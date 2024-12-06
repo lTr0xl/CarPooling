@@ -1,0 +1,79 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/rideDetailsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ride Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/fragmentDriverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Driver: John Doe"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/fragmentPassengerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passenger: Alice Smith"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/fragmentFromLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From: Main Street"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/fragmentToLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To: Central Park"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/fragmentPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price: $25.00"
+            android:textSize="16sp"
+            android:textColor="@color/green"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fragmentShowMapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Map"
+        android:textSize="16sp"
+        android:backgroundTint="@color/green"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center" />
+</LinearLayout>

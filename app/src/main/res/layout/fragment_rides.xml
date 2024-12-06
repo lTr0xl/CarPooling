@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RidesFragment"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp">
+
+        <TextView
+            android:id="@+id/ridesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rides"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            />
+
+        <LinearLayout
+            android:id="@+id/activeRideButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            >
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/green"
+                android:layout_gravity="center_vertical"
+                android:shape="oval" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Ride"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+        <Button
+            android:id="@+id/showAvailableButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available"
+            android:backgroundTint="@color/black"
+            android:visibility="gone"
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/showPreviousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Previous"
+            android:backgroundTint="@color/black"
+            android:layout_weight="1"
+
+            />
+        <Button
+            android:id="@+id/showRequestsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Requests"
+            android:backgroundTint="@color/black"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/showAwaitingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Awaiting Start"
+        android:backgroundTint="@color/black"
+        android:layout_gravity="left"
+        android:visibility="gone"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ridesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:elevation="10dp"
+        android:layout_marginTop="15dp"
+        />
+
+</LinearLayout>
