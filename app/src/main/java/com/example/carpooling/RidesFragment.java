@@ -338,6 +338,8 @@ public class RidesFragment extends Fragment implements RequestsRecyclerViewInter
                 model.setPassengerName(passengerN);
                 model.setDriverName(driverN);
 
+                model.setDriverRating(rides.get(i).getPassengerRating());
+                model.setPassengerRating(rides.get(i).getDriverRating());
 
 
                 ridesModel.add(model);
