@@ -198,11 +198,7 @@ public class RidesFragment extends Fragment implements RequestsRecyclerViewInter
             requestsAdapter.notifyDataSetChanged();
         });
 
-
-
-
     }
-
 
     private boolean isThereActiveRide() {
         if(rides != null) {
@@ -382,7 +378,7 @@ public class RidesFragment extends Fragment implements RequestsRecyclerViewInter
 //                            }
             }
         } catch (IOException e) {
-            e.printStackTrace(); // Log the exception
+            e.printStackTrace();
             Log.d("CATCH", "ERROR u geocoder");
         }
 

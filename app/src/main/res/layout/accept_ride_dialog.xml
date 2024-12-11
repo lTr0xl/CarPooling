@@ -30,7 +30,6 @@
         android:clipToPadding="false"
         android:elevation="10dp">
 
-        <!-- Close Icon -->
         <ImageView
             android:id="@+id/closeDialog"
             android:layout_width="24dp"
@@ -41,14 +40,12 @@
             android:padding="4dp"
             app:tint="@color/black" />
 
-        <!-- Ride Details -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="8dp">
 
-            <!-- Driver Name and Rating -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -74,7 +71,6 @@
 
 
 
-            <!-- Starting Location -->
             <TextView
                 android:id="@+id/dialogStartLocation"
                 android:layout_width="match_parent"
@@ -84,7 +80,6 @@
                 android:textColor="@color/gray"
                 android:layout_marginTop="8dp" />
 
-            <!-- Destination -->
             <TextView
                 android:id="@+id/dialogDestinationLocation"
                 android:layout_width="match_parent"

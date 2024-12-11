@@ -11,6 +11,10 @@ public class OffersModel {
     String licensePlate;
     String status;
     float driverRating;
+    double driverStartLat;
+    double driverStartLng;
+    double driverDestLat;
+    double driverDestLng;
 
 
     public OffersModel() {
@@ -27,6 +31,7 @@ public class OffersModel {
         this.licensePlate = licensePlate;
         this.status = status;
      //   this.driverRating = driverRating;
+
     }
 
 
@@ -109,5 +114,37 @@ public class OffersModel {
 
     public void setDriverRating(float driverRating) {
         this.driverRating = driverRating;
+    }
+
+    public double getDriverStartLat() {
+        return driverStartLat;
+    }
+
+    public void setDriverStartLat(double driverStartLat) {
+        this.driverStartLat = driverStartLat;
+    }
+
+    public double getDriverStartLng() {
+        return driverStartLng;
+    }
+
+    public void setDriverStartLng(double driverStartLng) {
+        this.driverStartLng = driverStartLng;
+    }
+
+    public double getDriverDestLat() {
+        return driverDestLat;
+    }
+
+    public void setDriverDestLat(double driverDestLat) {
+        this.driverDestLat = driverDestLat;
+    }
+
+    public double getDriverDestLng() {
+        return driverDestLng;
+    }
+
+    public void setDriverDestLng(double driverDestLng) {
+        this.driverDestLng = driverDestLng;
     }
 }

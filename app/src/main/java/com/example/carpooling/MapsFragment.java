@@ -75,7 +75,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
         super.onPause();
 
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.remove(this); // Ensure the fragment is destroyed
+        transaction.remove(this);
         transaction.commitAllowingStateLoss();
 
     }

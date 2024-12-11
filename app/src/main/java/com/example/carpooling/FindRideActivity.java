@@ -66,6 +66,7 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
     DatabaseHelper databaseHelper;
     FrameLayout mapFragmentContainer;
     EditText searchStart, searchDestination;
+    Button currentLocationButton;
     ConstraintLayout parent;
     RecyclerView recyclerView;
     List<Ride> rides = new ArrayList<>();
@@ -90,6 +91,7 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
         databaseHelper = new DatabaseHelper(this);
         mapFragmentContainer = findViewById(R.id.mapFragmentContainerPassenger);
         searchStart = findViewById(R.id.searchStartLocPassenger);
+        currentLocationButton = findViewById(R.id.currentLocationButtonPassenger);
         searchDestination = findViewById(R.id.searchDestinationLocPassenger);
         parent = findViewById(R.id.parentFindRide);
         recyclerView = findViewById(R.id.offersRecyclerView);
@@ -126,6 +128,11 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
             }
         });
 
+        currentLocationButton.setOnClickListener(v -> {
+            getCurrentLocation();
+            mapFragmentContainer.setVisibility(View.VISIBLE);
+        });
+
 
     }
 
@@ -146,7 +153,10 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
                 model.setStatus(rides.get(i).getStatus());
                 model.setStartLocation(getLocationName(rides.get(i).getDriverStartLat(), rides.get(i).getDriverStartLng()));
                 model.setDestinationLocation(getLocationName(rides.get(i).getDriverDestinationLat(), rides.get(i).getDriverDestinationLng()));
-
+                model.setDriverStartLat(rides.get(i).getDriverStartLat());
+                model.setDriverStartLng(rides.get(i).getDriverStartLng());
+                model.setDriverDestLat(rides.get(i).getDriverDestinationLat());
+                model.setDriverDestLng(rides.get(i).getDriverDestinationLng());
 
                 String driverN = databaseHelper.getDriverName(rides.get(i).getDriverId());
 
@@ -156,6 +166,32 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
 
             }
         }
+    }
+
+    private void sortRidesByDistance(double riderStartLat, double riderStartLng, double riderDestLat, double riderDestLng){
+        offersModels.sort((offer1, offer2) -> {
+            double distance1 = calculateDistance(riderStartLat, riderStartLng, offer1.getDriverStartLat(), offer1.getDriverStartLng()) +
+                    calculateDistance(riderDestLat, riderDestLng, offer1.getDriverDestLat(), offer1.getDriverDestLng());
+            double distance2 = calculateDistance(riderStartLat, riderStartLng, offer2.getDriverStartLat(), offer2.getDriverStartLng()) +
+                    calculateDistance(riderDestLat, riderDestLng, offer2.getDriverDestLat(), offer2.getDriverDestLng());
+            return Double.compare(distance1, distance2);
+        });
+    }
+
+
+    private double calculateDistance(double lat1, double lng1, double lat2, double lng2){
+        final int earth_radius = 6371;
+
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLng = Math.toRadians(lng2 - lng1);
+        // Haversine formula
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
+                        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return earth_radius * c;
     }
 
     private void openAutoCompleteActivity() {
@@ -304,6 +340,13 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
         } else {
             zoomToFit(markerStart.getPosition(), markerDestination.getPosition());
         }
+        if (markerStart != null && markerDestination != null){
+            sortRidesByDistance(start.latitude, start.longitude, destination.latitude, destination.longitude);
+            adapter.notifyDataSetChanged();
+        }else{
+            getRidesModelData();
+            adapter.notifyDataSetChanged();
+        }
     }
 
     @Override
@@ -339,14 +382,10 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             View currentFocus = getCurrentFocus();
 
-            // Get the views that should not trigger hiding the map
-            View[] interactiveViews = {searchStart, searchDestination, mapFragmentContainer};
+            View[] interactiveViews = {searchStart, searchDestination, mapFragmentContainer, currentLocationButton};
 
-            // Check if the touch event is outside these views
             if (!isTouchInsideView(event, interactiveViews)) {
-                // Hide the map
                 mapFragmentContainer.setVisibility(View.GONE);
-                // Hide the keyboard if needed
                 hideKeyboard();
             }
             if(currentFocus instanceof EditText){
@@ -356,9 +395,7 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
         return super.dispatchTouchEvent(event);
     }
 
-    /**
-     * Checks if the touch event occurred inside any of the provided views.
-     */
+
     private boolean isTouchInsideView(MotionEvent event, View[] views) {
         for (View view : views) {
             if (view != null && isTouchInsideView(event, view)) {
@@ -368,9 +405,7 @@ public class FindRideActivity extends AppCompatActivity implements OnMapReadyCal
         return false;
     }
 
-    /**
-     * Checks if the touch event occurred inside the given view.
-     */
+
     private boolean isTouchInsideView(MotionEvent event, View view) {
         int[] location = new int[2];
         view.getLocationOnScreen(location);

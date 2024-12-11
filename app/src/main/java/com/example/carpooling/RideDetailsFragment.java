@@ -124,7 +124,7 @@ public class RideDetailsFragment extends Fragment {
 //                            }
             }
         } catch (IOException e) {
-            e.printStackTrace(); // Log the exception
+            e.printStackTrace();
             Log.d("CATCH", "ERROR u geocoder");
         }
 

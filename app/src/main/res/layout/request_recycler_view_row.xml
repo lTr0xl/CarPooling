@@ -17,7 +17,7 @@
         android:layout_height="0dp"
         android:visibility="gone"
         />
-    <!-- Status Tag (Positioned at top-right corner) -->
+
     <TextView
         android:id="@+id/requestStatus"
         android:layout_width="wrap_content"
@@ -34,7 +34,6 @@
         android:layout_marginStart="250dp"
         />
 
-    <!-- Request Header (Driver) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +61,7 @@
             android:textSize="14sp"/>
     </LinearLayout>
 
-    <!-- Driver's ride info (from, to, time) -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,7 +97,6 @@
         android:textColor="@color/gray"
         android:textSize="14sp"/>
 
-    <!-- Price -->
     <TextView
         android:id="@+id/requestPrice"
         android:layout_width="match_parent"
@@ -109,7 +107,6 @@
         android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Passenger's Request Info (Name, Start, Destination) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -136,7 +133,6 @@
             android:textSize="14sp"/>
     </LinearLayout>
 
-    <!-- Passenger's Ride info (start, destination) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
