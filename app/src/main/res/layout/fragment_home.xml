@@ -32,15 +32,5 @@ android:background="@color/white">
     android:layout_margin="16dp"
     android:elevation="4dp" />
 
-<TextView
-    android:id="@+id/footerTextView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|center_horizontal"
-    android:layout_marginBottom="16dp"
-    android:text="Happy Carpooling!"
-    android:textSize="14sp"
-    android:textColor="@color/black"
-    />
 
 </FrameLayout>

@@ -336,6 +336,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgsPassenger = {String.valueOf(passengerId)};
         db.update(DATABASE_TABLE_PASSENGERS, contentValues, "id=?", selectionArgsPassenger);
     }
+
+//    public double getPassengerRating(int passengerId){
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        String query = "SELECT rating FROM " + DATABASE_TABLE_PASSENGERS +
+//                " WHERE id = ?";
+//        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(passengerId)});
+//        Double result = null;
+//        if(cursor != null && cursor.moveToFirst()){
+//            result = cursor.getDouble(cursor.getColumnIndexOrThrow("rating"));
+//            cursor.close();
+//        }
+//
+//        return result;
+//    }
     public LatLng getDriverCurrentLocation(int rideId){
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT driverCurrentLat, driverCurrentLng FROM " + DATABASE_TABLE_RIDES +

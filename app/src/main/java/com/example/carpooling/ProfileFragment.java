@@ -22,7 +22,8 @@ public class ProfileFragment extends Fragment {
 
     LinearLayout driverLayout;
     Button logOutButton;
-    TextView fullNameText, emailText, typeText, carModelText, carPlateText;
+    TextView fullNameText, emailText, typeText, carModelText, carPlateText, ratingUser;
+    DatabaseHelper databaseHelper;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -46,6 +47,7 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        databaseHelper = new DatabaseHelper(requireContext());
         driverLayout = requireActivity().findViewById(R.id.carDetailsContainer);
         logOutButton = requireActivity().findViewById(R.id.logoutButton);
         fullNameText = requireActivity().findViewById(R.id.fullNameText);
@@ -53,6 +55,7 @@ public class ProfileFragment extends Fragment {
         typeText = requireActivity().findViewById(R.id.typeText);
         carModelText = requireActivity().findViewById(R.id.carModelText);
         carPlateText = requireActivity().findViewById(R.id.carLicenseText);
+        ratingUser = requireActivity().findViewById(R.id.ratingUser);
 
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("session", MODE_PRIVATE);
         String type = sharedPreferences.getString("type", null);
@@ -65,8 +68,11 @@ public class ProfileFragment extends Fragment {
         if (type != null) {
             if (type.equals("Driver")) {
                 driverLayout.setVisibility(View.VISIBLE);
+                ratingUser.setText(String.valueOf(databaseHelper.getDriverRating(sharedPreferences.getInt("id", -1))));
+
             } else if (type.equals("Passenger")) {
                 driverLayout.setVisibility(View.GONE);
+                ratingUser.setText(String.valueOf(databaseHelper.getPassengerRating(sharedPreferences.getInt("id", -1))));
             }
         }
 
